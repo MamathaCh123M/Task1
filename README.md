@@ -485,6 +485,145 @@ The GTKWave will be opened and following window will be appeared.
 
 <details>
  <summary>
+ <h2> TASK-5</h2> 
+<h3>2-bit comparator</h3>
+ </summary><br>
+
+<html lang="en">
+<body>
+
+<h1>2-Bit Comparator Project</h1>
+
+<h2>Overview</h2>
+<p>This project aims to design and implement a 2-bit comparator using the VSDSquadron Mini board. A 2-bit comparator is a digital circuit that compares two 2-bit binary numbers and indicates whether one number is greater than, less than, or equal to the other. The project involves designing the comparator logic using C programming in Visual Studio Code, setting up the hardware connections on a breadboard, and verifying the functionality through LEDs connected to the output.</p>
+
+<h2>Project Objective</h2>
+<p>The objective of this project is to:</p>
+<ul>
+    <li>Design a 2-bit comparator using C programming.</li>
+    <li>Implement the designed comparator on the VSDSquadron Mini board.</li>
+    <li>Verify the correct functionality of the comparator by using LEDs to display the comparison results.</li>
+    <li>Gain hands-on experience in digital circuit design, C programming, and hardware implementation.</li>
+</ul>
+
+<h2>Key Components</h2>
+<ul>
+    <li><strong>VSDSquadron Mini Board</strong>: The main microcontroller board used for processing and logic implementation.</li>
+    <li><strong>Breadboard and Jumper Wires</strong>: For building and testing the circuit.</li>
+    <li><strong>LEDs</strong>: To display the comparison results. This project requires 3 LEDs.</li>
+    <li><strong>Resistors</strong>: To limit the current to the LEDs. 220Ohm resistors are used in this project.</li>
+</ul>
+
+<h2>Pin Configuration</h2>
+<table>
+    <tr>
+        <th>LED</th>
+        <th>VSD SQUADRON BOARD</th>
+    </tr>
+    <tr>
+        <td>LED1</td>
+        <td>PIN4 (PD4)</td>
+    </tr>
+    <tr>
+        <td>LED2</td>
+        <td>PIN5 (PD5)</td>
+    </tr>
+    <tr>
+        <td>LED3</td>
+        <td>PIN6 (PD6)</td>
+    </tr>
+</table>
+
+<h2>Functional Description</h2>
+<p>
+    <strong>A &gt; B</strong>: LED1 (Yellow color) lights up when <em>A</em> is greater than <em>B</em>.<br>
+    <strong>A &lt; B</strong>: LED2 (Red color) lights up when <em>A</em> is less than <em>B</em>.<br>
+    <strong>A = B</strong>: LED3 (Green color) lights up when both numbers are equal.
+</p>
+
+<h2>Truth Table of 2-Bit Comparator</h2>
+<table>
+    <tr>
+        <th>A1</th><th>A0</th><th>B1</th><th>B0</th><th>A &gt; B</th><th>A = B</th><th>A &lt; B</th>
+    </tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+
+<h2>Code for Implementation of 2-Bit Comparator using VSDSquadron Mini Board</h2>
+<div class="code-block">
+<pre>
+#include &lt;ch32v00x.h&gt;
+#include &lt;debug.h&gt;
+#include &lt;stdio.h&gt;
+
+#define LED1_PIN GPIO_Pin_4 //yellow LED
+#define LED2_PIN GPIO_Pin_5 //red LED
+#define LED3_PIN GPIO_Pin_6 //green LED
+#define LED_PORT GPIOD
+
+void GPIO_Config(void) {
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
+    GPIO_InitTypeDef GPIO_InitStructure;
+    GPIO_InitStructure.GPIO_Pin = LED1_PIN | LED2_PIN | LED3_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(LED_PORT, &GPIO_InitStructure);
+}
+
+void compare_2bit(uint8_t a, uint8_t b) {
+    GPIO_ResetBits(LED_PORT, LED1_PIN | LED2_PIN | LED3_PIN);
+
+    if (a > b) {
+        GPIO_SetBits(LED_PORT, LED1_PIN);
+    } else if (a == b) {
+        GPIO_SetBits(LED_PORT, LED2_PIN);
+    } else {
+        GPIO_SetBits(LED_PORT, LED3_PIN);
+    }
+}  
+
+int main(void) {   
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+    SystemCoreClockUpdate();
+    Delay_Init();
+    GPIO_Config();
+
+    for (uint8_t a = 0; a <= 3; a++) {
+        for (uint8_t b = 0; b <= 3; b++) {
+            compare_2bit(a, b);
+            Delay_Ms(5000);
+        }
+    }
+    
+    return 0;
+}
+</pre>
+</div>
+
+<h2>Project Demonstration</h2><br>
+
+![image](https://github.com/user-attachments/assets/3abe3671-4746-4acc-aeac-a71ad1e99ef2)<br>
+</body>
+</details><br><hr>
+<details>
+    <summary>
+    
+
 
 
 
