@@ -485,6 +485,103 @@ The GTKWave will be opened and following window will be appeared.
 
 <details>
  <summary>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Bit Magnitude Comparator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .logic-circuit {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>1-Bit Magnitude Comparator</h1>
+    <p>
+        A comparator used to compare two bits is called a single-bit comparator. It consists of two inputs each for two single-bit numbers and three outputs to generate less than, equal to, and greater than conditions between the two binary numbers.
+    </p>
+    <h2>Truth Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>A &gt; B</th>
+                <th>A &lt; B</th>
+                <th>A = B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        From the above truth table, the logical expressions for each output can be expressed as follows:
+    </p>
+    <ul>
+        <li><strong>A &gt; B:</strong> AB'</li>
+        <li><strong>A &lt; B:</strong> A'B</li>
+        <li><strong>A = B:</strong> A'B' + AB</li>
+    </ul>
+    <h2>Logic Circuit</h2>
+    <div class="logic-circuit">
+        <p>
+            <em>The logic circuit diagram for the 1-bit comparator can be represented as:</em>
+        </p>
+        <img src="1-bit-comparator-circuit.png" alt="Logic Circuit of 1-Bit Comparator" width="500">
+    </div>
+</body>
+</html>
 
 
   
