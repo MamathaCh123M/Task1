@@ -618,6 +618,14 @@ int main(void) {
 </details><br><hr>
 <details>
 	<summary>
+		   <h2> TASK-6</h2> 
+   <h3>Demonstration video</h3>
+    </summary><br>
+<p>A demonstration of the project can be carried out to observe the LED output based on different values of <em>A</em> and <em>B</em>.</p><br>
+
+
+<h3>Project video:</h3> <br>
+https://github.com/user-attachments/assets/6512fd98-4a4c-484f-8f3e-f9ec0201f471
 		<h2>Acknowledgement</h2><br></summary>
 
   I would like to extend my heartfelt thanks to Kunal Ghosh Sir for offering me this exceptional internship focused on RISCV Architecture with the VSDSquadron Mini. This opportunity ignited my passion for RISCV, providing me with the perfect introduction to this exciting field. Throughout the internship, I gained invaluable insights and hands-on experience. I am also grateful to VLSI System Design for creating such a remarkable research internship, which has greatly contributed to my learning and growth.
