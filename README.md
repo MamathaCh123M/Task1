@@ -611,13 +611,6 @@ int main(void) {
 </details><br><hr>
 <details>
     <summary>
-   
-<h2>Conclusion</h2>
-<p>This implementation demonstrates the use of the VSDSquadron Mini board to design a basic digital circuit. The 1-bit comparator effectively compares two binary numbers and outputs the comparison results through LEDs. This project reinforces the fundamental concepts of digital design. Overall, this project was a valuable learning experience.</p>
-</html>
-</details><br><hr>
-<details>
-	<summary>
 		   <h2> TASK-6</h2> 
    <h3>Demonstration video</h3>
     </summary><br>
@@ -626,15 +619,16 @@ int main(void) {
 
 <h3>Project video:</h3> <br>
 https://github.com/user-attachments/assets/6512fd98-4a4c-484f-8f3e-f9ec0201f471
+<h2>Conclusion</h2>
+<p>This implementation demonstrates the use of the VSDSquadron Mini board to design a basic digital circuit. The 1-bit comparator effectively compares two binary numbers and outputs the comparison results through LEDs. This project reinforces the fundamental concepts of digital design. Overall, this project was a valuable learning experience.</p>
+</html>
+</details><br><hr>
+<details>
+	<summary>
 		<h2>Acknowledgement</h2><br></summary>
 
   I would like to extend my heartfelt thanks to Kunal Ghosh Sir for offering me this exceptional internship focused on RISCV Architecture with the VSDSquadron Mini. This opportunity ignited my passion for RISCV, providing me with the perfect introduction to this exciting field. Throughout the internship, I gained invaluable insights and hands-on experience. I am also grateful to VLSI System Design for creating such a remarkable research internship, which has greatly contributed to my learning and growth.
  
  </details>
 
- 	<h2>Acknowledgement</h2><br></summary>
-
-  I would like to extend my heartfelt thanks to Kunal Ghosh Sir for offering me this exceptional internship focused on RISCV Architecture with the VSDSquadron Mini. This opportunity ignited my passion for RISCV, providing me with the perfect introduction to this exciting field. Throughout the internship, I gained invaluable insights and hands-on experience. I am also grateful to VLSI System Design for creating such a remarkable research internship, which has greatly contributed to my learning and growth.
- 
- </details>
-
+ 	
