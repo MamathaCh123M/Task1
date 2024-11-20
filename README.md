@@ -611,15 +611,7 @@ int main(void) {
 </details><br><hr>
 <details>
     <summary>
-    <h2> TASK-6</h2> 
-   <h3>Demonstration video</h3>
-    </summary><br>
-<p>A demonstration of the project can be carried out to observe the LED output based on different values of <em>A</em> and <em>B</em>.</p><br>
-
-<h3>Project video:</h3> <br>
-
-https://github.com/user-attachments/assets/6e5a2bb7-abcf-4096-a22d-263913a8cd85
-
+   
 <h2>Conclusion</h2>
 <p>This implementation demonstrates the use of the VSDSquadron Mini board to design a basic digital circuit. The 1-bit comparator effectively compares two binary numbers and outputs the comparison results through LEDs. This project reinforces the fundamental concepts of digital design. Overall, this project was a valuable learning experience.</p>
 </html>
